@@ -1,0 +1,20 @@
+body {
+    background: url("../images/tree_bark/tree_bark.png");
+    margin-left: 10px;
+}
+h1 {
+    color: teal;
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+
+p {
+    color: slategray;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+h2 {
+    color: teal;
+    font-size: 26px;
+}
