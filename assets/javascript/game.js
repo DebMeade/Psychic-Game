@@ -7,11 +7,13 @@ var wins = 0;
 var losses = 0;
 // var guessesMade = 0;
 var guessesRemaining = 9;
+var guessesMade = [];
 
 //When the user presses a key:
 function reset () {
 computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];   //Whole line has to be included
 guessesRemaining = 9;
+guessesMade = [];
 renderHTML ();
 console.log(reset)
 }
@@ -21,8 +23,8 @@ function renderHTML () {
     // "<p>The computer chose: " + computerGuess + "</p>" +    //keeping this because it's a great way to see if the wins works when user matches computer guess
     "<p>Wins: " + wins + "</p>" +
     "<p>Losses: " + losses + "</p>" +
-    "<p>Guesses Remaining: " + guessesRemaining + "</p>" 
-    // "<p>Guesses Made " + userGuess + "</p>"  
+    "<p>Guesses Remaining: " + guessesRemaining + "</p>" +
+    "<p>Guesses Made: " + guessesMade + "</p>"  
 
     document.getElementById("letter").innerHTML = html;
     // document.getElementById("guess").innerHTML = "Did you guess correctly?";
@@ -36,6 +38,7 @@ document.onkeyup = function(event) {
 
     //If the guess matches the random number:
     if (guessesRemaining >0) {
+
     
     
     
@@ -44,7 +47,9 @@ document.onkeyup = function(event) {
         reset();
     } else {
         guessesRemaining --;
-        // guessesMade ++;  //Add letters guessed                   
+        // guessesMade ++;  //Add letters guessed    
+        guessesMade.push(userGuess);
+        console.log(guessesMade);               
         }
     
 } else {
